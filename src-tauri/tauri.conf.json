@@ -35,7 +35,7 @@
   },
   "plugins": {
     "updater": {
-      "pubkey": "dW50cnVzdGVkIGNvbW1lbnQ6IG1pbmlzaWduIHB1YmxpYyBrZXk6IDk1NkQyMjZFNTUzRjU1NzAKUldSd1ZUOVZiaUp0bFRPdzhJdUpjMk5aczd4MHVaV1hkeTJzdTUydlJjME5iRDdwZzMwaUJScGgK",
+      "pubkey": "dW50cnVzdGVkIGNvbW1lbnQ6IG1pbmlzaWduIHB1YmxpYyBrZXk6IEUzMDUyOTk3NjY4ODAwNjgKUldSb0FJaG1seWtGNC9EVmlFQmtQbW1SbGk4UzAyd3JGNnd1aCsyQ1VUZFdNQ1U3amZVME9DS2cK",
       "endpoints": [
         "https://github.com/RemcoDewlde/MixitForge/releases/latest/download/latest.json"
       ],
