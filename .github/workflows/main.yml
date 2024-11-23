@@ -24,6 +24,7 @@ jobs:
           #   args: ''
 
     runs-on: ${{ matrix.platform }}
+    environment: main
     steps:
       - uses: actions/checkout@v4
 
