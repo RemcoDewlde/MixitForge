@@ -7,10 +7,9 @@ pub fn run() {
         .plugin(tauri_plugin_shell::init())
         .setup(|app| {
             let handle = app.handle().clone();
-            // Spawn a task to check and apply updates asynchronously
             tauri::async_runtime::spawn(async move {
                 if let Err(e) = update(handle).await {
-                    eprintln!("Failed to update: {e}");
+                    println!("Failed to update: {e}");
                 }
             });
             Ok(())
@@ -29,7 +28,12 @@ async fn update(app: tauri::AppHandle) -> tauri_plugin_updater::Result<()> {
             .download_and_install(
                 |chunk_length, content_length| {
                     downloaded += chunk_length;
-                    println!("downloaded {downloaded} from {content_length:?}");
+                     if let Some(content_length) = content_length {
+                        let percentage = (downloaded as f64 / content_length as f64) * 100.0;
+                        println!("downloaded {} bytes from {} bytes ({:.2}%)", downloaded, content_length, percentage);
+                    } else {
+                        println!("downloaded {} bytes (unknown total size)", downloaded);
+                    }
                 },
                 || {
                     println!("download finished");
@@ -40,6 +44,5 @@ async fn update(app: tauri::AppHandle) -> tauri_plugin_updater::Result<()> {
         println!("update installed");
         app.restart();
     }
-
     Ok(())
 }
