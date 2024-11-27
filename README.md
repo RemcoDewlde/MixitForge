@@ -1,4 +1,7 @@
-# Tauri + React + Typescript
+# MixitForge
+[![Build](https://github.com/RemcoDewlde/MixitForge/actions/workflows/main.yml/badge.svg?branch=main)](https://github.com/RemcoDewlde/MixitForge/actions/workflows/main.yml)
+
+## Tauri + React + Typescript
 
 This template should help get you started developing with Tauri, React and Typescript in Vite.
 
